@@ -46,16 +46,21 @@ a {
     color: #1e90ff;
     text-decoration: none;
 }
-.mission, .vision, .contact {
+.mission, .vision {
     margin: 40px auto;
     width: 80%;
     background-color: #121212;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
+    
+   
 }
-.mission h2, .vision h2, .contact h2 {
+.mission h2, .vision h2 {
     color: #1e90ff;
+    flex: 1;
+    text-align: center; /* Centers the text */
+    font-size: 3rem;
 }
 body {
     font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
@@ -68,7 +73,7 @@ h1 {
     font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.5px;
-    font-size: 42px;
+    font-size: 4.6rem;
     margin-bottom: 30px;
 }
 
@@ -96,7 +101,7 @@ p {
 }
 
 /* Image styles */
-.header-image {
+/* .header-image {
     width: 100%;
     margin: 20px 0;
     overflow: hidden;
@@ -108,18 +113,25 @@ p {
     max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
-}
+} */
 
 .mission-content, .vision-content {
     display: flex;
     align-items: center;
-    gap: 30px;
+    font-size: 3rem;
 }
 
 .mission-text, .vision-text {
     flex: 1;
+    text-align: center; /* Centers the text */ 
 }
-
+.mission-text p, .vision-text p {
+    font-size: 1.4rem; 
+    line-height: 1.6;  
+    margin: 10px 0;   
+    color: #e0e0e0;    
+}
+/* 
 .mission-image, .vision-image {
     flex: 1;
     text-align: center;
@@ -134,7 +146,7 @@ p {
 
 .mission-image img:hover, .vision-image img:hover {
     transform: scale(1.03);
-}
+} */
 
 .member {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -146,7 +158,7 @@ p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
 }
 
-.member img {
+/* .member img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -158,19 +170,76 @@ p {
 
 .member img:hover {
     transform: scale(1.05);
-}
+} */
 
-.mission, .vision, .contact {
+.mission, .vision  {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
 }
 
-.mission:hover, .vision:hover, .contact:hover {
+.mission:hover, .vision:hover {
     transform: translateY(-3px);
+}
+#contactForm {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center; /* Centers horizontally */
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Adds shadow for aesthetics */
+    width: 80%; /* Retains the current width of the box */
+    margin: auto;
+}
+
+#contactForm textarea {
+    width: 90%; /* Ensures textarea doesn't exceed form's width */
+    max-width: 90%; /* Keeps the maximum width consistent */
+    height: 120px; /* Ensures appropriate height for messages */
+    max-height: 150px; /* Limits height to prevent overflowing */
+    resize: vertical; /* Allows users to resize only vertically */
+    overflow-y: auto; /* Adds a scroll bar if the text overflows */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+#contactForm input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+#contactForm input:focus, #contactForm textarea:focus {
+    border-color: #1e90ff; /* Highlights field on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5); /* Adds a glow effect */
+}
+
+#submitBtn {
+    background-color: #1e90ff;
+    color: white;
+    font-size: 16px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submitBtn:hover {
+    background-color: #0066cc;
+    transform: translateY(-2px);
 }
 
 /* Contact section */
-.contact-wrapper {
+/* .contact-wrapper {
     display: flex;
     gap: 30px;
     align-items: center;
@@ -178,9 +247,9 @@ p {
 
 .contact-form {
     flex: 3;
-}
+} */
 
-.contact-image {
+/* .contact-image {
     flex: 2;
     text-align: center;
 }
@@ -189,7 +258,7 @@ p {
     max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* Footer styles */
 footer {
@@ -199,31 +268,27 @@ footer {
 }
 
 .footer-content {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    
 }
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    justify-content: space-between;
+}
+.s1, .s2, .s3, .s4{
+    margin: 1.6rem;
 }
 
-.social-icon img {
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-.social-icon img:hover {
-    transform: scale(1.1);
-}
 
 .copyright {
-    font-size: 14px;
-    color: #888;
+    font-size: 2rem;
+    color: #ebebeb;
+    margin-top: 1.2rem;
 }
 
 /* Improved button style */
@@ -263,7 +328,7 @@ input:focus, textarea:focus {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .mission-content, .vision-content, .contact-wrapper {
+    .mission-content, .vision-content {
         flex-direction: column;
     }
     
