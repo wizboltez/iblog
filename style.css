@@ -1,0 +1,282 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 25px;
+    margin: 20px auto;
+    width: 90%;
+}
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+header {
+    padding: 20px;
+    font-size: 24px;
+}
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.member {
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+.mission, .vision, .contact {
+    margin: 40px auto;
+    width: 80%;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+.mission h2, .vision h2, .contact h2 {
+    color: #1e90ff;
+}
+body {
+    font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    font-size: 28px;
+}
+
+p {
+    font-family: 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+.navbar a {
+    font-family: 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #1e90ff;
+}
+
+/* Image styles */
+.header-image {
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.mission-content, .vision-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.mission-text, .vision-text {
+    flex: 1;
+}
+
+.mission-image, .vision-image {
+    flex: 1;
+    text-align: center;
+}
+
+.mission-image img, .vision-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.mission-image img:hover, .vision-image img:hover {
+    transform: scale(1.03);
+}
+
+.member {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #1e90ff;
+    transition: transform 0.3s ease;
+}
+
+.member img:hover {
+    transform: scale(1.05);
+}
+
+.mission, .vision, .contact {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.mission:hover, .vision:hover, .contact:hover {
+    transform: translateY(-3px);
+}
+
+/* Contact section */
+.contact-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.contact-form {
+    flex: 3;
+}
+
+.contact-image {
+    flex: 2;
+    text-align: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer styles */
+footer {
+    background-color: #121212;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon img {
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+.copyright {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Improved button style */
+#submitBtn {
+    background-color: #1e90ff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submitBtn:hover {
+    background-color: #0066cc;
+    transform: translateY(-2px);
+}
+
+#submitBtn:active {
+    transform: translateY(0);
+}
+
+/* Form inputs */
+input, textarea {
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.2);
+    outline: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .mission-content, .vision-content, .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .team {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar {
+        flex-wrap: wrap;
+    }
+    
+    .navbar a {
+        margin: 5px;
+    }
+}
