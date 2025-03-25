@@ -23,6 +23,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 //     }
 // });
 
+//the following code is for the contact us form
 // const submitBtn = document.getElementById('submitBtn');
 // if (submitBtn) {
 //     submitBtn.addEventListener('click', function(event) {
@@ -68,6 +69,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
         
 //     });
 // }
+
 //the following commented code makes the button appear after scrolling 300px which was not handy
 // document.addEventListener("DOMContentLoaded", function () {
 //     const scrollToTopBtn = document.getElementById("scrollToTop");
