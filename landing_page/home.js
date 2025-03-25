@@ -20,19 +20,19 @@ newsData.forEach(news => {
     newsSection.appendChild(newsItem);
 });
 // Add smooth scrolling for navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        if (this.getAttribute('href').includes('#')) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').split('#')[1];
-            const targetElement = document.getElementById(targetId);
+// document.querySelectorAll('nav a').forEach(anchor => {
+//     anchor.addEventListener('click', function(e) {
+//         if (this.getAttribute('href').includes('#')) {
+//             e.preventDefault();
+//             const targetId = this.getAttribute('href').split('#')[1];
+//             const targetElement = document.getElementById(targetId);
 
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
-});
+//             if (targetElement) {
+//                 window.scrollTo({
+//                     top: targetElement.offsetTop - 100,
+//                     behavior: 'smooth'
+//                 });
+//             }
+//         }
+//     });
+// });

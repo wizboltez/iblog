@@ -11,6 +11,7 @@ header {
     padding: 20px;
 }
 
+
 .member {
     background-color: #121212;
     padding: 20px;
@@ -79,7 +80,9 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #0f5cad; 
+    transform: translateY(-5px);
+    color: #1e90ff;
+    text-decoration: none;
+    text-shadow: 0 0 10px #1e90ff;
 }
 
