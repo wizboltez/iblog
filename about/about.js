@@ -1,5 +1,3 @@
-
-
 // Team member card animations
 const teamMembers = document.querySelectorAll('.member');
 teamMembers.forEach(member => {
