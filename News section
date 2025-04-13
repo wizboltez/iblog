@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple News Section</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            padding: 15px;
+            border-radius: 30px;
+            margin: 20px;
+        }
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        .news-item {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .news-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Product</a>
+        <a href="#">Accessories</a>
+        <a href="#">News</a>
+        <a href="#">About Us</a>
+        <a href="#">Go to Apple</a>
+    </div>
+    
+    <div class="container" id="news-section">
+        <!-- News items will be inserted here dynamically -->
+    </div>
+    
+    <script>
+        const newsData = [
+            { image: "https://cdn.beebom.com/mobile/apple-iphone-16e-front-and-back-5.png", title: "iPhone 16e Released!", description: "Apple launches the affordable iPhone 16e with A17 chip and enhanced battery life." },
+            { image: "https://img2.cgtrader.com/items/3110630/0cf21d0923/large/apple-airtag-3d-model-obj-fbx-ma-stl-bip.jpg", title: "AirTag 2 Announced", description: "Apple's new AirTag 2 features improved tracking and a better speaker." },
+            { image: "https://images.hindustantimes.com/tech/img/2023/06/04/1600x900/Apple_WWDC_2023_poster_1685883081694_1685883090303.PNG", title: "WWDC 2025 Date Revealed", description: "Apple announces WWDC 2025 will start on June 9th with major iOS updates." },
+            { image: "https://cdn.wccftech.com/wp-content/uploads/2024/02/Apple-Car-concept-2.jpg", title: "Apple Car Announced", description: "Apple unveils its first electric car with autonomous driving features." },
+            { image: "https://cdn.mos.cms.futurecdn.net/4eTGWuJYm5qSdan4AyZrbg.jpg", title: "HomePod 3 Released", description: "Apple launches HomePod 3 with improved sound quality and Siri integration." },
+            { image: "https://i.ytimg.com/vi/iwH8iNMwaEI/maxresdefault.jpg", title: "Apple Glass Unveiled", description: "Apple's AR-powered smart glasses are officially revealed." },
+            { image: "https://images.macrumors.com/article-new/2024/03/macOS-15-Header.jpg", title: "macOS 15 Announced", description: "Apple introduces macOS 15 with enhanced security and new features." },
+            { image: "https://imageio.forbes.com/specials-images/imageserve/65621f720a47ac89c02b5eb7/Apple-AirPods-Max-in-blue-finish-/960x0.jpg", title: "AirPods Max 2 Launched", description: "Apple updates its high-end headphones with lossless audio support." },
+            { image: "https://images.macrumors.com/article-new/2024/05/M2-iPad-Air-Hero-Feature-Purple.jpg", title: "iPad Air M3 Released", description: "Apple debuts the new iPad Air powered by the M3 chip." },
+            { image: "https://imgsrv2.voi.id/vkwR7OI_pCdqKPCWBGXuGenVwtFMGCYTAOEFYhoKthI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zOTY2MjkvMjAyNDA3MDgxMzQ2LW1haW4ucG5n.jpg", title: "Apple Watch Series 10", description: "Apple's latest smartwatch features a larger display and longer battery life." },
+            { image: "https://www.sammobile.com/wp-content/uploads/2023/09/Apple-iPhone-15-Pro-Max-Camera.jpg", title: "iPhone 16 Pro Announced", description: "The next-gen iPhone 16 Pro arrives with A18 chip and improved battery life." },
+            { image: "https://www.tablety.pl/wp-content/uploads/2022/12/ipad-pro-2024.jpg", title: "iPad Pro M3 Launched", description: "Apple reveals iPad Pro with M3 chip and OLED display." },
+            { image: "https://teknologik.fr/wp-content/uploads/2023/08/mac-mini-m3-apple.jpg", title: "Mac Mini M3 Announced", description: "Apple updates Mac Mini with M3 chip for better performance." },
+            { image: "https://img.chip.com.tr/rcman/Cw940h529q95gm/storage/files/images/2022/07/20/applea-av1-destegi-geliyor-vR6l.jpg", title: "Apple TV 8K Released", description: "Apple introduces Apple TV with 8K support and a new A17 chip." },
+            { image: "https://cdn.ipadizate.com/2022/03/Airpods-imagen-adicional.jpg?width=1200", title: "AirPods Lite Announced", description: "Apple introduces a budget-friendly version of AirPods with great sound quality." },
+            { image: "https://www.thestreet.com/.image/t_share/MjA0Nzg2NDQ1MDQ5NzM0MTcz/4-13-inch15-inch-m3-macbook-air-hands-onfirst-look-thestreet.jpg", title: "MacBook Air M3 Released", description: "Apple unveils the MacBook Air with M3 chip and longer battery life." },
+            { image: "https://cdn.mos.cms.futurecdn.net/rChVt3ikz36adxWgXDnkTm-1200-80.jpg",title:"Apple Pencil 3 Announced",description:"Apple introduces a new Apple Pencil with enhanced precision and features."},]
+        const newsSection = document.getElementById("news-section");
+
+        newsData.forEach(news => {
+            let newsItem = document.createElement("div");
+            newsItem.classList.add("news-item");
+            newsItem.innerHTML = `
+                <img src="${news.image}" alt="${news.title}">
+                <h3>${news.title}</h3>
+                <p>${news.description}</p>
+            `;
+            newsSection.appendChild(newsItem);
+        });
+    </script>
+</body>
+</html>
