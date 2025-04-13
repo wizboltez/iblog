@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    <link rel="stylesheet" href="home.css">
+    <title>Contact Us</title>
     <link rel="stylesheet" href="../global/style.css">
+    <link rel="stylesheet" href="../contactUs/contact.css">
     <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
 </head>
 <body>  
@@ -16,10 +16,23 @@
         <a href="news.html">News</a>
         <a href="../location/location.html">Store Locator</a>
     </div>
-    
-    <div class="container" id="news-section">
-        <!-- News items will be inserted here dynamically -->
+
+    <div>
+        <div class="contact">
+            <div class="video-container">
+                <div id="player"></div> <!-- YouTube Player will be inserted here -->
+            </div>
+            <h3>Contact Us</h3>
+            <div id="contactForm">
+                <input type="text" id="nameInput" placeholder="Your Name" class="contact-input">
+                <input type="email" id="emailInput" placeholder="Your Email" class="contact-input">
+                <textarea id="messageInput" placeholder="Your Message" class="contact-input"></textarea>
+                <button id="submitBtn" class="contact-button">Send Message</button>
+                <p id="formStatus"></p>
+            </div>
+        </div>
     </div>
+
     <!-- this is the footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -34,23 +47,23 @@
                     </div>
                 </div>
             </div>
-        <div id="scrollToTop">
+            <div id="scrollToTop">
                     <i class="fa-solid fa-angle-up fa-xl" style="color: #1e90ff;"></i>
-        </div>
-        <div class="footer-left">
-            <div class="footer-column">
-                <a href="../about/about.html">About Us</a> 
-                <a href="../privacy_terms/privacy.html">Privacy Policy</a>
-                <a href="../privacy_terms/terms.html">Terms & Condition</a>
             </div>
-            <div class="footer-column">
-                <a href="../contactUs/contact.html">Contact Us</a>
+            <div class="footer-left">
+                <div class="footer-column">
+                    <a href="../about/about.html">About Us</a> 
+                    <a href="../privacy_terms/privacy.html">Privacy Policy</a>
+                    <a href="../privacy_terms/terms.html">Terms & Condition</a>
+                </div>
+                <div class="footer-column">
+                    <a href="../contactUs/contact.html">Contact Us</a>
+                </div>
             </div>
-        </div>
         </div>
     </footer>
     
-    <script src="../landing_page/home.js" defer></script>
     <script src="../global/script.js" defer></script>
+    <script src="../contactUs/contact.js"></script>
 </body>
 </html>
