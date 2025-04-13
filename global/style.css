@@ -46,9 +46,10 @@ body {
 .footer-left {
     text-align: left;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 15px;
     text-decoration: none;
+    flex-wrap: wrap;
 }
 .footer-left a {
     color: #1e90ff;
@@ -63,6 +64,12 @@ body {
     text-decoration: none;
     text-shadow: 0 0 10px #1e90ff;
 }
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 /* this is the styling of the arrow up  */
 /* Scroll to top button */
 #scrollToTop {
