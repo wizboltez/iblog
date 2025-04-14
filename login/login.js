@@ -36,44 +36,36 @@ function togglePasswordVisibility(inputId, show) {
 
 // Form submission handler
 function setupFormSubmission() {
-    const form = document.querySelector('.signup-form');
+    const form = document.querySelector('.login-form');
     
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         
         // Get form values
-        const name = form.querySelector('input[type="text"]').value;
         const email = form.querySelector('input[type="email"]').value;
         const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirm-password').value;
-        
-        // Validate passwords match
-        if (password !== confirmPassword) {
-            showMessage('Passwords do not match!', 'error');
-            return;
-        }
+        const rememberMe = document.getElementById('remember-me').checked;
         
         // Prepare data for API
         const userData = {
-            name: name,
             email: email,
             password: password
         };
         
         // Send data to API
-        registerUser(userData);
+        loginUser(userData, rememberMe);
     });
 }
 
 // API call function
-function registerUser(userData) {
+function loginUser(userData, rememberMe) {
     // Show loading state
     const button = document.querySelector('button[type="submit"]');
     const originalText = button.textContent;
-    button.textContent = 'Creating Account...';
+    button.textContent = 'Logging in...';
     button.disabled = true;
     
-    fetch('http://localhost:3001/api/register', {
+    fetch('http://localhost:3001/api/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -83,30 +75,39 @@ function registerUser(userData) {
     .then(response => {
         if (!response.ok) {
             return response.json().then(data => {
-                throw new Error(data.message || 'Registration failed');
+                throw new Error(data.message || 'Login failed');
             });
         }
         return response.json();
     })
     .then(data => {
         // Show success message before redirecting
-        showMessage('Account created successfully! Redirecting to login...', 'success');
+        showMessage('Login successful! Redirecting...', 'success');
         
-        // Redirect to login page after a short delay
+        // If remember me is checked, store user info in localStorage, otherwise in sessionStorage
+        const storage = rememberMe ? localStorage : sessionStorage;
+        
+        // Store token and user info if available
+        if (data.token) {
+            storage.setItem('token', data.token);
+        }
+        
+        if (data.user) {
+            storage.setItem('user', JSON.stringify(data.user));
+        }
+        
+        // Redirect to landing page after a short delay
         setTimeout(() => {
-            window.location.href = '../login/login.html';
-        }, 2000);
+            window.location.href = '../landing_page/home.html';
+        }, 1500);
     })
     .catch(error => {
         // Error
-        showMessage(error.message || 'Something went wrong. Please try again.', 'error');
-    })
-    .finally(() => {
-        // Reset button state only if there was an error (for success we keep the button disabled)
-        if (document.querySelector('.message.error')) {
-            button.textContent = originalText;
-            button.disabled = false;
-        }
+        showMessage(error.message || 'Invalid email or password. Please try again.', 'error');
+        
+        // Reset button state
+        button.textContent = originalText;
+        button.disabled = false;
     });
 }
 
@@ -124,7 +125,7 @@ function showMessage(message, type) {
     messageElement.textContent = message;
     
     // Insert message after the form
-    const form = document.querySelector('.signup-form');
+    const form = document.querySelector('.login-form');
     form.after(messageElement);
     
     // Only auto-remove error messages

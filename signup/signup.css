@@ -336,4 +336,65 @@ body::before {
       font-size: 20px;
     }
   }
+
+
+  .message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+    border: 1px solid #F44336;
+}
+
+/* Animation for loading state */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Password field styling improvements */
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Button state styling */
+button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Additional responsive styling */
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 15px;
+    }
+    
+    .signup-form input, 
+    .password-field input {
+        padding: 10px;
+    }
+}
   
