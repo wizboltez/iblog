@@ -20,6 +20,19 @@ body {
     font-size: 18px;
     font-weight: bold;
 }
+
+/* Updated blue glowing link style */
+.navbar a.glow-blue {
+    color: #2184e6; /* normal blue text */
+    font-weight: bold;
+    text-shadow: none;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+.navbar a.glow-blue:hover {
+    text-shadow: 0 0 5px #2184e6, 0 0 10px #2184e6, 0 0 15px #2184e6;
+}
+
 /* footer */
 .footer {
     background-color: #1a1a1a;
