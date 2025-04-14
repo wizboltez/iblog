@@ -1,11 +1,9 @@
-
 body {
     position: relative;
-    background-color: #0a0a0a; /* Darker background for contrast */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: #000000; 
+    overflow-x: hidden; 
   }
   
-  /* Technology sparkle background */
   body::before {
     content: "";
     position: fixed;
@@ -13,9 +11,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Behind everything */
+    z-index: -1; 
     background: radial-gradient(circle at 50% 50%, transparent 95%, rgba(30, 144, 255, 0.05) 100%);
-    pointer-events: none; /* Allow clicking through */
+    pointer-events: none; 
   }
   
   /* Animated particles */
@@ -26,8 +24,8 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Behind content but above the gradient */
-    pointer-events: none; /* Allow clicking through */
+    z-index: -1; 
+    pointer-events: none; 
   }
   
   .sparkle {
@@ -78,19 +76,17 @@ body {
     }
   }
   
-  /* Make signup container stand out from background */
+ 
   .signup-container {
     position: relative;
-    z-index: 1; /* Above the particles */
-    box-shadow: 0 0 25px rgba(30, 144, 255, 0.4); /* Enhanced glow */
+    z-index: 1; 
+    box-shadow: 0 0 25px rgba(30, 144, 255, 0.4); 
   }
-  /* Add this to your signup.css file */
 
-/* Body background setup */
 body {
   position: relative;
-  background-color: #0a0a0a; /* Darker background for contrast */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  background-color: #0a0a0a; 
+  overflow-x: hidden; 
 }
 
 /* Technology sparkle background */
@@ -101,12 +97,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Behind everything */
+  z-index: -1; 
   background: radial-gradient(circle at 50% 50%, transparent 95%, rgba(30, 144, 255, 0.05) 100%);
-  pointer-events: none; /* Allow clicking through */
+  pointer-events: none; 
 }
-
-/* Animated particles */
 .tech-sparkles {
   position: fixed;
   top: 0;
@@ -114,12 +108,9 @@ body::before {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* Behind content but above the gradient */
-  pointer-events: none; /* Allow clicking through */
+  z-index: -1; 
+  pointer-events: none; 
 }
-
-/* Enhanced sparkle styles */
-/* Enhanced sparkle styles */
 .sparkle {
     position: absolute;
     width: 4px;
@@ -132,7 +123,6 @@ body::before {
     will-change: transform, opacity;
   }
   
-  /* Variations for color and size */
   .sparkle:nth-child(3n) {
     background-color: #39f;
     width: 3px;
@@ -153,8 +143,6 @@ body::before {
     height: 1.5px;
     filter: drop-shadow(0 0 5px #ffffff) brightness(3);
   }
-  
-  /* Faster, smoother floating */
   @keyframes float {
     0% {
       transform: translateY(100vh) translateX(20px);
@@ -194,7 +182,6 @@ body::before {
     filter: drop-shadow(0 0 5px #ffffff) brightness(3);
   }
   
-  /* Faster, smoother floating */
   @keyframes float {
     0% {
       transform: translateY(100vh) translateX(20px);
@@ -212,17 +199,14 @@ body::before {
     }
   }
   
-  
-/* Make signup container stand out from background */
 .signup-container {
   position: relative;
-  z-index: 1; /* Above the particles */
-  box-shadow: 0 0 25px rgba(30, 144, 255, 0.4); /* Enhanced glow */
+  z-index: 1; 
+  box-shadow: 0 0 25px rgba(30, 144, 255, 0.4); 
 }
-
 /* Signup form container */
 .signup-container {
-    background-color: #1e1e1e;
+    background-color: #000000;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 20px #1e90ff33;
@@ -235,7 +219,6 @@ body::before {
     align-items: center;
   }
      
-  /* Heading style */
   .signup-container h1 {
     color: #1e90ff;
     margin-bottom: 1.5rem;
@@ -243,45 +226,47 @@ body::before {
     font-size: 24px;
   }
   
-  /* Form style */
   .signup-form {
     width: 100%;
   }
-     
-  /* All input fields - standardized height and spacing */
-  .signup-container input[type="text"],
-  .signup-container input[type="email"],
-  .signup-container input[type="password"] {
+ .signup-container input[type="text"],
+ .signup-container input[type="email"],
+ .signup-container input[type="password"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 1rem;
     border: none;
     border-radius: 5px;
-    background-color: #333;
+    background-color: #222; 
     color: #fff;
     box-sizing: border-box;
-    height: 45px; /* Standardized height for all inputs */
-    font-size: 16px; /* Consistent font size */
+    height: 45px; 
+    font-size: 16px; 
   }
-     
-  /* Password field container - same margin as direct inputs */
+.signup-container input[type="text"]:focus,
+.signup-container input[type="email"]:focus,
+.signup-container input[type="password"]:focus {
+  outline: none;
+  border: 2px solid #1e90ff; 
+  background-color: #1c1c1c; 
+}
+   
+  /* Password field container */
   .password-field {
     width: 100%;
     margin-bottom: 1rem;
     position: relative;
-    height: 45px; /* Match input height */
+    height: 45px; 
   }
   
-  /* Remove bottom margin from password inputs since the container has margin */
   .password-field input[type="password"] {
     margin-bottom: 0;
   }
-     
-  /* Eye icon - centered vertically and positioned at the end */
+    
   .password-field .toggle-password {
     position: absolute;
     top: 50%;
-    right: 12px; /* Consistent padding with input */
+    right: 12px; 
     transform: translateY(-50%);
     cursor: pointer;
     color: #1e90ff;
@@ -292,7 +277,6 @@ body::before {
     height: 100%;
   }
      
-  /* Submit button */
   .signup-container button {
     width: 100%;
     padding: 12px;
@@ -304,14 +288,12 @@ body::before {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 45px; /* Match input height */
+    height: 45px;
   }
      
   .signup-container button:hover {
     background-color: #1c7ed6;
   }
-     
-  /* Login link under the button */
   .signup-container p {
     margin-top: 1rem;
     text-align: center;

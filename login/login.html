@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
   <link rel="stylesheet" href="../global/style.css" />
-  <link rel="stylesheet" href="../signup/signup.css" />
+  <link rel="stylesheet" href="../login/login.css" />
   <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
 </head>
 <body>  
@@ -23,32 +23,27 @@
 
   
   
-  <div class="signup-container">
-    <h1>Create an Account</h1>
-    <form class="signup-form">
-      <input type="text" placeholder="Full Name" required />
+  <div class="login-container">
+    <h1>Login to Your Account</h1>
+    <form class="login-form">
       <input type="email" placeholder="Email" required />
 
-      <!-- Password Field -->
       <div class="password-field">
         <input type="password" id="password" placeholder="Password" required />
-        <span class="toggle-password" onmousedown="togglePasswordVisibility('password', true)" onmouseup="togglePasswordVisibility('password', false)" ontouchstart="togglePasswordVisibility('password', true)" ontouchend="togglePasswordVisibility('password', false)">
+        <span class="toggle-password" 
+              onmousedown="showPassword()" 
+              onmouseup="hidePassword()" 
+              onmouseleave="hidePassword()">
           <i class="fa-regular fa-eye"></i>
         </span>
       </div>
 
-      <!-- Confirm Password Field -->
-      <div class="password-field">
-        <input type="password" id="confirm-password" placeholder="Confirm Password" required />
-        <span class="toggle-password" onmousedown="togglePasswordVisibility('confirm-password', true)" onmouseup="togglePasswordVisibility('confirm-password', false)" ontouchstart="togglePasswordVisibility('confirm-password', true)" ontouchend="togglePasswordVisibility('confirm-password', false)">
-          <i class="fa-regular fa-eye"></i>
-        </span>
-      </div>
-
-      <button type="submit">Sign Up</button>
-      <p class="login-link">Already have an account? <a href="../login/login.html">Log in</a></p>
+      <button type="submit">Login</button>
+      <p class="signup-link">Don't have an account? <a href="../signup/signup.html">Sign up</a></p>
     </form>
   </div>
+
+
 
   <footer class="footer">
     <div class="footer-container">
@@ -86,7 +81,7 @@
       </div>
     </div>
   </footer>
-  <script src="../signup/signup.js"></script>
+  <script src="../login/login.js"></script>
   <script src="../global/script.js" defer></script>
 </body>
 </html>
