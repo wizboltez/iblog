@@ -3,12 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>global</title>
+    <title>Apple Products | iBlog</title>
     <link rel="stylesheet" href="../global/style.css">
-    <link rel="stylesheet" href="../products/product.css">
     <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .product-item {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .product-item h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            font-weight: 600;
+            color: #0071e3;
+        }
+        
+        .product-item p {
+            margin: 0;
+            opacity: 0.8;
+            flex-grow: 1;
+        }
+        
+        .view-details {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #0071e3;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .view-details:hover {
+            background-color: #0062c4;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Apple product gradient effect */
+        .gradient-text {
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        /* Scroll animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* Category filters */
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+        
+        .category-btn {
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover {
+            background-color: #333;
+        }
+        
+        .category-btn.active {
+            background-color: #0071e3;
+        }
+    </style>
 </head>
-<body>  
+<body>
     <div class="navbar">
         <a href="../landing_page/home.html">Home</a>
         <a href="../products/product.html">Product</a>
@@ -18,7 +165,16 @@
         <a href="../location/location.html">Store Locator</a>
         <a href="../signup/signup.html" class="glow-blue">Sign up</a>
     </div>
-    <!-- this is the footer -->
+    <div class="categories">
+        <button class="category-btn active" data-category="all">All Products</button>
+        <button class="category-btn" data-category="iphone">iPhone</button>
+        <button class="category-btn" data-category="ipad">iPad</button>
+        <button class="category-btn" data-category="mac">Mac</button>
+    </div>
+    
+    <div class="container" id="products-container">
+        <!-- Products will be inserted here dynamically -->
+    </div>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-right">
@@ -49,6 +205,132 @@
     </footer>
     
     <script src="../global/script.js" defer></script>
-    <script src="../products/product.js" defer></script>
+    <script>
+        const productsData = [
+            {
+                name: "iPhone 16",
+                category: "iphone",
+                description: "The latest iPhone with revolutionary features and performance.",
+                image: "https://quicktech.in/cdn/shop/files/6_4669543f-8d58-45a8-9ce7-5047616e8414.jpg?v=1728225184&width=1445",
+                href: "iphone16.html"
+            },
+            {
+                name: "iPhone 16 Plus",
+                category: "iphone",
+                description: "All the great features of iPhone 16 with a larger display.",
+                image: "https://cdn.mos.cms.futurecdn.net/kdSJQN7DNKerAXkPxHCSPW.jpg",
+                href: "iphone16plus.html"
+            },
+            {
+                name: "iPhone 16 Pro",
+                category: "iphone",
+                description: "Pro camera system. Pro display. Pro performance.",
+                image: "https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/tile/Apple-iPhone-16-Pro-hero-240909-lp.jpg.og.jpg?202503102159",
+                href: "iphone16pro.html"
+            },
+            {
+                name: "iPhone 16 Pro Max",
+                category: "iphone",
+                description: "The ultimate iPhone with the largest display and longest battery life.",
+                image: "https://photos5.appleinsider.com/gallery/61078-126393-Cameras-2-16-Pro-Max-xl.jpg",
+                href: "iphone16promax.html"
+            },
+            {
+                name: "iPad 11th Gen",
+                category: "ipad",
+                description: "The most advanced iPad with M3 chip and Liquid Retina display.",
+                image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-finish-unselect-gallery-2-202405_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=80&.v=YXpaUEtKWGhlNnNrVGZkTEo4T0xsN2dzSmpObkZCM3MrNmJ5SkhESlNDaktqSkExTHB4VHJRR1hzOGdBenBuczN0bWR6ME9RYmIrVG9PSXZFalM2aHdBb0pjWml6bllCL0Y5a1RKc2gxZjlIaERUT3FJbHFiWTlmb2lodm1tWE55UjVHcmIzQTc0UDFXY0hsUWdxUDFR&traceId=1",
+                href: "index1.html"
+            },
+            {
+                name: "iPad Mini",
+                category: "ipad",
+                description: "Compact power that fits in your hand.",
+                image: "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22882359/vpavic_210924_4766_0010.jpg?quality=90&strip=all&crop=0,0,100,100",
+                href: "index.html"
+            },
+            {
+                name: "iPad Pro 11",
+                category: "ipad",
+                description: "Powerhouse performance in a portable size.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw7p39XKphc_ROATRrI_IgAeL37Hh9ar402uEfH906e8JkFWPcE77NA__ly_VxyZoin44&usqp=CAU",
+                href: "ipadpro11(2).html"
+            },
+            {
+                name: "iPad Pro 12.9",
+                category: "ipad",
+                description: "Our most advanced display ever on an iPad.",
+                image: "https://itronics.in/wp-content/uploads/2021/05/ipad-pro-12-11-select-202104_GEO_IN.png",
+                href: "ipadpro12.html"
+            },
+            {
+                name: "MacBook Air",
+                category: "mac",
+                description: "Our thinnest, lightest notebook with all-day battery life.",
+                image: "https://media.wired.com/photos/5bd883dc5b66a763e54f0b22/master/pass/macbookair3.jpg",
+                href: "#"
+            },
+            {
+                name: "MacBook Pro",
+                category: "mac",
+                description: "Ultimate power for ultimate performance.",
+                image: "https://www.apple.com/v/macbook-pro/ar/images/overview/welcome/welcome_hero_endframe__c61x1mv7kgqe_large.jpg",
+                href: "macbookpro.html"
+            }
+        ];
+        
+        const productsContainer = document.getElementById("products-container");
+        
+        // Function to render products based on selected category
+        function renderProducts(category = 'all') {
+            // Clear the container
+            productsContainer.innerHTML = '';
+            
+            // Filter products if needed
+            const filteredProducts = category === 'all' 
+                ? productsData 
+                : productsData.filter(product => product.category === category);
+            
+            // Create and append product items
+            filteredProducts.forEach((product, index) => {
+                let productElement = document.createElement("div");
+                productElement.classList.add("product-item", "fade-in");
+                productElement.style.animationDelay = `${index * 0.1}s`;
+                
+                let content = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3><span class="gradient-text">${product.name}</span></h3>
+                    <p>${product.description}</p>
+                    <a href="${product.href}" class="view-details">View Details</a>
+                `;
+                
+                productElement.innerHTML = content;
+                
+                // Add click event for the whole card that redirects to product page
+                productElement.addEventListener("click", function(e) {
+                    if (!e.target.classList.contains("view-details")) {
+                        window.location.href = product.href;
+                    }
+                });
+                
+                productsContainer.appendChild(productElement);
+            });
+        }
+        
+        // Initial render
+        renderProducts();
+        
+        // Category filter functionality
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Render filtered products
+                renderProducts(this.dataset.category);
+            });
+        });
+    </script>
 </body>
 </html>
