@@ -1,11 +1,4 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-}
 
-/* Tech sparkles animation */
 .tech-sparkles {
   position: fixed;
   top: 0;
@@ -37,8 +30,6 @@ body {
     opacity: 0;
   }
 }
-
-/* Login container */
 .login-container {
   max-width: 450px;
   margin: 80px auto;
@@ -48,14 +39,16 @@ body {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.login-container h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 30px;
-  font-size: 28px;
+.login-container {
+  max-width: 450px;
+  margin: 80px auto;
+  background-color: #111; /* Darker background for contrast */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  color: #fff; /* Text color white */
 }
 
-/* Form styling */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -64,22 +57,33 @@ body {
 
 .login-form input[type="email"],
 .login-form input[type="password"] {
+  width: 100%; /* Ensures full width */
   padding: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   border-radius: 5px;
   font-size: 16px;
-  transition: border-color 0.3s;
+  background-color: #1c1c1c;
+  color: white;
 }
 
 .login-form input:focus {
   border-color: #1e90ff;
   outline: none;
 }
-
-/* Password field */
 .password-field {
   position: relative;
   width: 100%;
+}
+.password-field input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  padding-right: 40px; 
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #1c1c1c;
+  color: white;
+  box-sizing: border-box;
 }
 
 .toggle-password {
@@ -88,11 +92,10 @@ body {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #777;
+  color: #ccc;
   user-select: none;
+  font-size: 18px;
 }
-
-/* Form options */
 .form-options {
   display: flex;
   justify-content: space-between;
@@ -118,7 +121,6 @@ body {
   text-decoration: underline;
 }
 
-/* Button styling */
 .login-form button {
   background-color: #1e90ff;
   color: white;
@@ -140,7 +142,6 @@ body {
   cursor: not-allowed;
 }
 
-/* Signup link */
 .signup-link {
   text-align: center;
   font-size: 14px;

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="../global/style.css">
+    <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto 40px auto;
+        }    
+        .news-item {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .news-item h3 {
+            margin: 15px 0;
+            font-size: 20px;
+            margin: 10px 0;
+            font-weight: 600;
+            color: #0071e3;
+        }
+        
+        .news-item p {
+            margin-top: 10px;
+            margin: 0;
+            opacity: 0.8;
+            flex-grow: 1;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #0071e3;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background-color: #0062c4;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .navbar a {
+                margin: 5px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Apple product gradient effect */
+        .gradient-text {
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        /* Scroll animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../landing_page/home.html">Home</a>
+        <a href="../products/product.html">Product</a>
+        <a href="../accessories/accessories.html">Accessories</a>
+        <a href="../news/Newssection.html">News</a>
+        <a href="../reviews/review.html">Reviews</a>
+        <a href="../location/location.html">Store Locator</a>
+        <a href="../signup/signup.html" class="glow-blue">Sign up</a>
+    </div>
+    <div class="container" id="news-section">
+        <!-- News items will be inserted here dynamically -->
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-right">
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" class="social-icon s1"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ededed;"></i></a>
+                    <a href="https://x.com/home?lang=en" class="social-icon s2"><i class="fa-brands fa-x-twitter fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.instagram.com/" class="social-icon s3"><i class="fa-brands fa-instagram fa-flip-horizontal fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.linkedin.com/" class="social-icon s4"><i class="fa-brands fa-linkedin fa-xl" style="color: #f2f2f2;"></i></a>
+                    <div>
+                        <p class="copyright">&copy; 2025 IBLOG. <br>All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="scrollToTop">
+                    <i class="fa-solid fa-angle-up fa-xl" style="color: #1e90ff;"></i>
+            </div>
+            <div class="footer-left">
+                <div class="footer-column">
+                    <a href="../about/about.html">About Us</a> 
+                    <a href="../privacy_terms/privacy.html">Privacy Policy</a>
+                    <a href="../privacy_terms/terms.html">Terms & Condition</a>
+                </div>
+                <div class="footer-column">
+                    <a href="../contactUs/contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Fix the duplicate newsData declarations by removing the first one
+        const newsData = [
+            { 
+                image: "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2025/02/apple-iphone-16e-black-and-white-colorways-against-a-blue-gradient-background.jpg?q=70&fit=contain&w=1200&h=628&dpr=1", 
+                title: "iPhone 16e Released!", 
+                description: "Apple launches the affordable iPhone 16e with A17 chip and enhanced battery life.",
+                link: "news1(2).html"  // Link to detailed page
+            },
+            { 
+                image: "https://img2.cgtrader.com/items/3110630/0cf21d0923/large/apple-airtag-3d-model-obj-fbx-ma-stl-bip.jpg", 
+                title: "AirTag 2 Announced", 
+                description: "Apple's new AirTag 2 features improved tracking and a better speaker.",
+                link: "news2(2).html"
+            },
+            { 
+                image: "https://devimages-cdn.apple.com/wwdc-services/images/C03E6E6D-A32A-41D0-9E50-C3C6059820AA/9737/9737_wide_250x141_2x.jpg", 
+                title: "WWDC 2025 Date Revealed", 
+                description: "Apple announces WWDC 2025 will start on June 9th with major iOS updates.",
+                link: "news3.html"
+            },
+            { 
+                image: "https://cdn.wccftech.com/wp-content/uploads/2024/02/Apple-Car-concept-2.jpg", 
+                title: "Apple Car Announced", 
+                description: "Apple unveils its first electric car with autonomous driving features.",
+                link: "news4.html"
+            },
+            { 
+                image: "https://cdn.mos.cms.futurecdn.net/4eTGWuJYm5qSdan4AyZrbg.jpg", 
+                title: "HomePod 3 Released", 
+                description: "Apple launches HomePod 3 with improved sound quality and Siri integration.",
+                link: "news5.html"
+            },
+            { 
+                image: "https://i.ytimg.com/vi/iwH8iNMwaEI/maxresdefault.jpg", 
+                title: "Apple Glass Unveiled", 
+                description: "Apple's AR-powered smart glasses are officially revealed.",
+                link: "news6.html"
+            },
+            { 
+                image: "https://images.macrumors.com/article-new/2024/03/macOS-15-Header.jpg", 
+                title: "macOS 15 Announced", 
+                description: "Apple introduces macOS 15 with enhanced security and new features.",
+                link: "news7.html"
+            },
+            { 
+                image: "https://imageio.forbes.com/specials-images/imageserve/65621f720a47ac89c02b5eb7/Apple-AirPods-Max-in-blue-finish-/960x0.jpg", 
+                title: "AirPods Max 2 Launched", 
+                description: "Apple updates its high-end headphones with lossless audio support.",
+                link: "news8.html"
+            },
+            { 
+                image: "https://images.macrumors.com/article-new/2024/05/M2-iPad-Air-Hero-Feature-Purple.jpg", 
+                title: "iPad Air M3 Released", 
+                description: "Apple debuts the new iPad Air powered by the M3 chip.",
+                link: "news9.html"
+            },
+            { 
+                image: "https://imgsrv2.voi.id/vkwR7OI_pCdqKPCWBGXuGenVwtFMGCYTAOEFYhoKthI/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8zOTY2MjkvMjAyNDA3MDgxMzQ2LW1haW4ucG5n.jpg", 
+                title: "Apple Watch Series 10", 
+                description: "Apple's latest smartwatch features a larger display and longer battery life.",
+                link: "news10.html"
+            },
+            { 
+                image: "https://www.sammobile.com/wp-content/uploads/2023/09/Apple-iPhone-15-Pro-Max-Camera.jpg", 
+                title: "iPhone 16 Pro Announced", 
+                description: "The next-gen iPhone 16 Pro arrives with A18 chip and improved battery life.",
+                link: "news11.html"
+            },
+            { 
+                image: "https://www.tablety.pl/wp-content/uploads/2022/12/ipad-pro-2024.jpg", 
+                title: "iPad Pro M3 Launched", 
+                description: "Apple reveals iPad Pro with M3 chip and OLED display.",
+                link: "new12.html"
+            }
+        ];
+    
+        const newsSection = document.getElementById("news-section");
+    
+        // Clear any existing content
+        newsSection.innerHTML = '';
+        
+        // Create and append news items with improved styling
+        newsData.forEach((news, index) => {
+            let newsItem = document.createElement("div");
+            newsItem.classList.add("news-item", "fade-in");
+            newsItem.style.animationDelay = `${index * 0.1}s`;
+    
+            let content = `
+                <img src="${news.image}" alt="${news.title}" onerror="this.src='/api/placeholder/400/320'; this.alt='Product Image';">
+                <h3><span class="gradient-text">${news.title}</span></h3>
+                <p>${news.description}</p>
+            `;
+            
+            if (news.link) {
+                content += `<a href="${news.link}" class="read-more">Read More</a>`;
+            }
+            
+            newsItem.innerHTML = content;
+            
+            // Add click functionality to the entire card if there's a link
+            if (news.link) {
+                newsItem.style.cursor = "pointer";
+                newsItem.addEventListener("click", function(e) {
+                    if (!e.target.classList.contains("read-more")) {
+                        window.location.href = news.link;
+                    }
+                });
+            }
+            
+            newsSection.appendChild(newsItem);
+        });
+        
+        // Highlight active navbar item
+        document.querySelectorAll('.navbar a').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.navbar a').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iPhone 16 Pro Announced | Apple News</title>
+        <link rel="stylesheet" href="../global/style.css">
+        <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
+    
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .article-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .article-meta span {
+            margin-right: 20px;
+        }
+        
+        .article-content {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .article-section {
+            margin-bottom: 40px;
+        }
+        
+        .article-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #0071e3;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            color: #0071e3;
+            margin-bottom: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #0071e3;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        
+        .specs-table th {
+            background-color: #0071e3;
+            color: white;
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 113, 227, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 113, 227, 0.5);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #444;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 32px;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .navbar a {
+                margin: 5px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .article-title {
+                font-size: 28px;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-image {
+                height: 250px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .animate-delay-1 { animation-delay: 0.2s; }
+        .animate-delay-2 { animation-delay: 0.4s; }
+        .animate-delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../landing_page/home.html">Home</a>
+        <a href="../products/product.html">Product</a>
+        <a href="../accessories/accessories.html">Accessories</a>
+        <a href="../news/Newssection.html">News</a>
+        <a href="../reviews/review.html">Reviews</a>
+        <a href="../location/location.html">Store Locator</a>
+        <a href="../signup/signup.html" class="glow-blue">Sign up</a>
+    </div>
+    <div class="article-container">
+        <a href="Newssection.html" class="back-button">← Back to News</a>
+        
+        <img src="https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/tile/Apple-iPhone-16-Pro-hero-geo-240909-lp.jpg.og.jpg?202503110043" alt="iPhone 16 Pro" class="hero-image" onerror="this.src='/api/placeholder/900/400'; this.alt='iPhone 16 Pro';">
+        
+        <h1 class="article-title animated">iPhone 16 Pro Announced: The Most Powerful iPhone Ever</h1>
+        
+        <div class="article-meta animated animate-delay-1">
+            <span>Published: April 20, 2025</span>
+            <span>By: Apple News</span>
+            <span>Category: Product Launch</span>
+        </div>
+        
+        <div class="article-content animated animate-delay-2">
+            <p>Apple has officially unveiled the iPhone 16 Pro and iPhone 16 Pro Max at a special event held at Apple Park in Cupertino. The new flagship smartphones feature significant upgrades over their predecessors, including the powerful A18 Pro chip, enhanced camera systems, and improved battery life.</p>
+            
+            <div class="article-section">
+                <h2>Revolutionary A18 Pro Chip</h2>
+                <p>At the heart of the iPhone 16 Pro is Apple's new A18 Pro chip, built on a 3-nanometer process. This next-generation silicon delivers up to 40% faster CPU performance and 35% improved GPU performance compared to the A17 Pro chip. The Neural Engine has also been significantly upgraded to handle more complex AI tasks and computational photography features.</p>
+                
+                <p>The A18 Pro chip enables new AI features that Apple calls "Intelligence+," which provides enhanced on-device processing for voice recognition, image processing, and text prediction while maintaining Apple's commitment to privacy.</p>
+            </div>
+            
+            <div class="article-section">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>ProMotion XDR Display</h3>
+                        <p>120Hz always-on display with peak brightness of 2000 nits outdoors</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔋</div>
+                        <h3>All-Day Battery</h3>
+                        <p>Up to 29 hours of video playback with fast charging capability</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📸</div>
+                        <h3>Pro Camera System</h3>
+                        <p>48MP main camera with 5x optical zoom and advanced computational photography</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Intelligence+</h3>
+                        <p>Advanced on-device AI features for photos, text, and voice</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="article-section">
+                <h2>Pro Camera System Redefined</h2>
+                <p>The iPhone 16 Pro features a triple-camera system with significant upgrades. The main 48-megapixel camera now has a larger sensor that captures more light for improved low-light photography. The ultra-wide camera has been upgraded to 48MP as well, allowing for stunning landscape shots with incredible detail.</p>
+                
+                <p>The telephoto camera now offers 5x optical zoom, matching the capabilities previously available only on the Pro Max model. All cameras benefit from the new Photonic Engine and Deep Fusion technology, powered by the A18 Pro chip's enhanced Neural Engine.</p>
+             
+                <p>Video capabilities have also been enhanced with the ability to shoot 8K video at 30fps, along with improved stabilization and Dolby Vision HDR recording. The new Cinematic mode supports 4K resolution at 60fps, bringing professional-grade video capabilities to your pocket.</p>
+            </div>
+            
+            <div class="article-section">
+                <h2>Technical Specifications</h2>
+                <table class="specs-table">
+                    <tr>
+                        <th>Feature</th>
+                        <th>iPhone 16 Pro</th>
+                        <th>iPhone 16 Pro Max</th>
+                    </tr>
+                    <tr>
+                        <td>Display</td>
+                        <td>6.3" ProMotion XDR</td>
+                        <td>6.9" ProMotion XDR</td>
+                    </tr>
+                    <tr>
+                        <td>Processor</td>
+                        <td>A18 Pro</td>
+                        <td>A18 Pro</td>
+                    </tr>
+                    <tr>
+                        <td>Storage</td>
+                        <td>256GB, 512GB, 1TB, 2TB</td>
+                        <td>256GB, 512GB, 1TB, 2TB</td>
+                    </tr>
+                    <tr>
+                        <td>Main Camera</td>
+                        <td>48MP, ƒ/1.4</td>
+                        <td>48MP, ƒ/1.4</td>
+                    </tr>
+                    <tr>
+                        <td>Ultra Wide</td>
+                        <td>48MP, ƒ/1.8</td>
+                        <td>48MP, ƒ/1.8</td>
+                    </tr>
+                    <tr>
+                        <td>Telephoto</td>
+                        <td>12MP, 5x optical</td>
+                        <td>12MP, 10x optical</td>
+                    </tr>
+                    <tr>
+                        <td>Battery Life</td>
+                        <td>Up to 26 hours</td>
+                        <td>Up to 32 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Colors</td>
+                        <td>Natural Titanium, Silver, Space Black, Deep Blue</td>
+                        <td>Natural Titanium, Silver, Space Black, Deep Blue</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="article-section">
+                <h2>iOS 19 Integration</h2>
+                <p>The iPhone 16 Pro comes with iOS 19 pre-installed, which brings several new features and enhancements. The new operating system includes redesigned Control Center, enhanced privacy controls, and deeper integration with other Apple devices.</p>
+                
+                <p>Apple has also introduced new customization options, allowing users to personalize their experience like never before. The lock screen can now display live information from apps, and widgets have been improved with more interactive capabilities.</p>
+            </div>
+            
+            <div class="article-section">
+                <h2>Environmental Impact</h2>
+                <p>Apple continues its commitment to the environment with the iPhone 16 Pro. The device is made with 100% recycled aluminum in the enclosure and uses recycled materials for several components. The packaging is 100% fiber-based, bringing Apple closer to its goal of eliminating plastic from all packaging by 2025.</p>
+                
+                <p>The company also announced that the manufacturing process for the iPhone 16 Pro series has a lower carbon footprint compared to previous generations, thanks to renewable energy use and carbon offsets.</p>
+            </div>
+            
+            <div class="article-section">
+                <h2>Pricing and Availability</h2>
+                <p>The iPhone 16 Pro starts at $1,099 for the 256GB model, while the iPhone 16 Pro Max starts at $1,199. Pre-orders begin this Friday, April 25, with availability beginning Friday, May 2.</p>
+                
+                <p>The new iPhones will be available in four colors: Natural Titanium, Silver, Space Black, and the new Deep Blue finish.</p>
+                
+                <a href="https://www.apple.com/shop/buy-iphone/iphone-16-pro" class="cta-button">Pre-order Now</a>
+            </div>
+            
+            <div class="article-section animated animate-delay-3">
+                <h2>Bottom Line</h2>
+                <p>The iPhone 16 Pro represents a significant step forward for Apple's flagship smartphone line. With its powerful A18 Pro chip, enhanced camera system, and longer battery life, it sets a new standard for premium smartphones. The integration of advanced AI features with Apple's commitment to privacy creates a unique proposition in the market.</p>
+                
+                <p>For professionals and enthusiasts who demand the best performance and camera capabilities, the iPhone 16 Pro and iPhone 16 Pro Max deliver on all fronts. With prices starting at $1,099, these devices are positioned at the high end of the market, but the technology and features they offer may well justify the investment for many users.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-right">
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" class="social-icon s1"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ededed;"></i></a>
+                    <a href="https://x.com/home?lang=en" class="social-icon s2"><i class="fa-brands fa-x-twitter fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.instagram.com/" class="social-icon s3"><i class="fa-brands fa-instagram fa-flip-horizontal fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.linkedin.com/" class="social-icon s4"><i class="fa-brands fa-linkedin fa-xl" style="color: #f2f2f2;"></i></a>
+                    <div>
+                        <p class="copyright">&copy; 2025 IBLOG. <br>All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="scrollToTop">
+                    <i class="fa-solid fa-angle-up fa-xl" style="color: #1e90ff;"></i>
+            </div>
+            <div class="footer-left">
+                <div class="footer-column">
+                    <a href="../about/about.html">About Us</a> 
+                    <a href="../privacy_terms/privacy.html">Privacy Policy</a>
+                    <a href="../privacy_terms/terms.html">Terms & Condition</a>
+                </div>
+                <div class="footer-column">
+                    <a href="../contactUs/contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../global/script.js" defer></script>
+    <script>
+        // Highlight active navbar item
+        document.querySelectorAll('.navbar a').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.navbar a').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Ensure images have fallbacks
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.getAttribute('onerror')) {
+                img.onerror = function() {
+                    this.src = '/api/placeholder/' + (this.width || 300) + '/' + (this.height || 150);
+                    this.alt = 'Image placeholder';
+                };
+            }
+        });
+    </script>
+</body>
+</html>

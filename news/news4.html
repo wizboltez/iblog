@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Car Announced - Apple News</title>
+    <link rel="stylesheet" href="../global/style.css">
+    <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .article-header img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .article-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 20px 0;
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .article-meta div {
+            margin: 0 10px;
+        }
+        
+        .article-content {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .article-content h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #0071e3;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #0071e3;
+        }
+        
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #0071e3;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: #0071e3;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #0062c4;
+            transform: scale(1.05);
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .spec-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .spec-card h3 {
+            color: #0071e3;
+            margin-top: 0;
+        }
+        
+        .spec-card p {
+            margin-bottom: 0;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.02);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 32px;
+            }
+            
+            .article-content {
+                font-size: 16px;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .navbar a {
+                margin: 5px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../landing_page/home.html">Home</a>
+        <a href="../products/product.html">Product</a>
+        <a href="../accessories/accessories.html">Accessories</a>
+        <a href="../news/Newssection.html">News</a>
+        <a href="../reviews/review.html">Reviews</a>
+        <a href="../location/location.html">Store Locator</a>
+        <a href="../signup/signup.html" class="glow-blue">Sign up</a>
+    </div>
+    <div class="article-container fade-in">
+        <div class="article-header">
+            <img src="https://editorial.pxcrush.net/carsales/general/editorial/apple-car-ver2.jpg?width=1024&height=682" alt="Apple Car Concept" class="header-image">
+            <h1 class="article-title">Apple Car Officially Announced: The Tech Giant Enters the Electric Vehicle Market</h1>
+            <div class="article-meta">
+                <div class="article-date">April 20, 2025</div>
+                <div class="article-author">by Apple Tech News</div>
+            </div>
+            <div>
+                <span class="tag">Apple Car</span>
+                <span class="tag">Electric Vehicle</span>
+                <span class="tag">Autonomous Driving</span>
+                <span class="tag">Project Titan</span>
+            </div>
+        </div>
+        
+        <div class="article-content">
+            <p>After years of speculation, rumors, and reported development setbacks, Apple has finally unveiled its highly anticipated electric vehicle, simply named "Apple Car." The announcement came during a special event held at Apple Park, where CEO Tim Cook described the vehicle as "the most personal device we've ever created" and "the future of mobility."</p>
+            
+            <p>The Apple Car marks the tech giant's first entry into the automotive industry, a move that has been the subject of speculation since reports of "Project Titan" first emerged in 2014. The finished product represents what Apple calls "a revolutionary rethinking of what a car can be in the age of electric mobility and advanced computing."</p>
+            
+            <div class="highlight-box">
+                <h3>Key Apple Car Features:</h3>
+                <p>⚡ 400+ mile range on a single charge<br>
+                🚗 Full autonomous driving capabilities (Level 4)<br>
+                🔋 Ultra-fast charging: 10-80% in under 20 minutes<br>
+                🍎 Integrated Apple ecosystem with CarOS<br>
+                🔒 Advanced security and privacy features</p>
+            </div>
+            
+            <h2>Design and Innovation</h2>
+            <p>Staying true to Apple's design philosophy, the Apple Car features a minimalist exterior with clean lines and a distinctive silhouette that sets it apart from traditional automobiles. The vehicle comes in five signature colors: Midnight, Starlight, Deep Purple, Alpine Green, and Product(RED).</p>
+            
+            <p>The interior represents perhaps the most radical departure from conventional automotive design. There is no traditional dashboard or instrument cluster; instead, a panoramic display stretches across the entire front of the cabin, providing information and entertainment through a completely redesigned interface. The steering wheel, which can retract into the dashboard during autonomous driving, features integrated touch controls.</p>
+            
+            <div class="image-gallery">
+                <img src="/api/placeholder/450/300" alt="Apple Car Interior" class="gallery-image">
+                <img src="/api/placeholder/450/300" alt="Apple Car Profile View" class="gallery-image">
+            </div>
+            
+            <p>"We approached this project with the same attention to detail and user experience that defines all Apple products," said Apple's Chief Design Officer during the presentation. "The result is a vehicle that feels both familiar and revolutionary at the same time."</p>
+            
+            <h2>Technical Specifications</h2>
+            <p>The Apple Car is built on a custom-designed electric platform that houses the battery pack in the floor, creating a low center of gravity and maximizing interior space. Apple has developed its own battery technology that it claims offers 30% higher energy density than the industry standard.</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>Performance</h3>
+                    <p>0-60 mph in 3.5 seconds<br>Top speed: 155 mph<br>Dual motor AWD system</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Battery & Range</h3>
+                    <p>120 kWh battery pack<br>400+ mile range<br>350 kW fast charging</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Dimensions</h3>
+                    <p>Length: 190 inches<br>Width: 75 inches<br>Height: 57 inches</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Technology</h3>
+                    <p>Apple Silicon automotive chip<br>14 external cameras<br>Advanced LiDAR system</p>
+                </div>
+            </div>
+            
+            <h2>CarOS: A New Operating System</h2>
+            <p>At the heart of the Apple Car experience is CarOS, a completely new operating system designed specifically for automotive use. CarOS builds on Apple's expertise in software development while addressing the unique needs and safety requirements of a vehicle.</p>
+            
+            <p>The system seamlessly integrates with the user's existing Apple devices and services, allowing for a continuous experience from home to car. Siri has been enhanced with automotive-specific capabilities, allowing for natural voice control of most vehicle functions and serving as the primary interface for navigation and infotainment.</p>
+            
+            <p>Apple has also announced an SDK for CarOS, which will allow third-party developers to create applications specifically designed for the in-car experience, though all apps will undergo rigorous safety and distraction testing before being approved.</p>
+            
+            <div class="highlight-box">
+                <h3>Autonomous Driving</h3>
+                <p>The Apple Car features a comprehensive suite of sensors, including cameras, radar, ultrasonic sensors, and a next-generation LiDAR system. This hardware, combined with Apple's machine learning capabilities, enables Level 4 autonomous driving, allowing the car to navigate most roads and conditions without human intervention.</p>
+                <p>During the demonstration, the Apple Car was shown navigating complex urban environments, responding to unexpected obstacles, and performing automated parking maneuvers. Users can take manual control at any time using the retractable steering wheel.</p>
+            </div>
+            
+            <h2>Pricing and Availability</h2>
+            <p>The Apple Car will be available in two configurations: the standard model starting at $69,900 and a higher-performance variant with extended range priced at $89,900. These prices position the Apple Car as a premium offering but still competitive with other high-end electric vehicles in the market.</p>
+            
+            <p>Initial availability will be limited to select markets in the United States, with orders opening in Fall 2025 and first deliveries expected in early 2026. Apple plans to expand to additional international markets throughout 2026 and 2027.</p>
+            
+            <p>The company also announced plans for Apple Car Stores, dedicated retail locations where customers can experience and purchase the vehicle, separate from traditional Apple Stores. These specialized showrooms will begin opening in major metropolitan areas alongside the vehicle's launch.</p>
+            
+            <h2>Industry Impact</h2>
+            <p>Analysts have been quick to react to Apple's announcement, with many suggesting that the entry of such a major technology player could accelerate the electric vehicle transition and disrupt established automakers.</p>
+            
+            <p>"Apple's entry into the automotive space represents one of the most significant developments in the industry in decades," noted automotive analyst Sarah Chen. "Their expertise in user experience, software integration, and consumer loyalty gives them advantages that traditional automakers will struggle to match."</p>
+            
+            <p>Stock prices of several traditional automakers fell following Apple's announcement, while suppliers mentioned during the presentation saw significant gains. Apple's own stock rose by over 3% by the end of the trading day.</p>
+            
+            <p>The Apple Car represents the company's biggest product category expansion since the introduction of the Apple Watch, and potentially its most ambitious project to date. As production ramps up and more details emerge about the manufacturing process and additional features, we'll continue to provide updates on this groundbreaking entry into the automotive world.</p>
+            
+            <a href="Newssection.html" class="back-button">← Back to News</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-right">
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" class="social-icon s1"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ededed;"></i></a>
+                    <a href="https://x.com/home?lang=en" class="social-icon s2"><i class="fa-brands fa-x-twitter fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.instagram.com/" class="social-icon s3"><i class="fa-brands fa-instagram fa-flip-horizontal fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.linkedin.com/" class="social-icon s4"><i class="fa-brands fa-linkedin fa-xl" style="color: #f2f2f2;"></i></a>
+                    <div>
+                        <p class="copyright">&copy; 2025 IBLOG. <br>All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="scrollToTop">
+                    <i class="fa-solid fa-angle-up fa-xl" style="color: #1e90ff;"></i>
+            </div>
+            <div class="footer-left">
+                <div class="footer-column">
+                    <a href="../about/about.html">About Us</a> 
+                    <a href="../privacy_terms/privacy.html">Privacy Policy</a>
+                    <a href="../privacy_terms/terms.html">Terms & Condition</a>
+                </div>
+                <div class="footer-column">
+                    <a href="../contactUs/contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Highlight active navbar item
+        document.querySelectorAll('.navbar a').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.navbar a').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

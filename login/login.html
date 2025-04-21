@@ -9,23 +9,21 @@
   <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
 </head>
 <body>  
-    <div class="tech-sparkles">
-        <!-- We'll generate these with JavaScript -->
-    </div>
-  <div class="navbar">
-    <a href="../landing_page/home.html">Home</a>
-    <a href="products.html">Product</a>
-    <a href="accessories.html">Accessories</a>
-    <a href="news.html">News</a>
-    <a href="../location/location.html">Store Locator</a>
-  </div>
-  
+    <div class="tech-sparkles"></div>
+    <div class="navbar">
+      <a href="../landing_page/home.html">Home</a>
+      <a href="../products/product.html">Product</a>
+      <a href="../accessories/accessories.html">Accessories</a>
+      <a href="../news/Newssection.html">News</a>
+      <a href="../reviews/review.html">Reviews</a>
+      <a href="../location/location.html">Store Locator</a>
+      <a href="../signup/signup.html" class="glow-blue">Sign up</a>
+  </div>  
   <div class="login-container">
     <h1>Welcome Back</h1>
     <form class="login-form">
       <input type="email" placeholder="Email" required />
 
-      <!-- Password Field -->
       <div class="password-field">
         <input type="password" id="password" placeholder="Password" required />
         <span class="toggle-password" onmousedown="togglePasswordVisibility('password', true)" onmouseup="togglePasswordVisibility('password', false)" ontouchstart="togglePasswordVisibility('password', true)" ontouchend="togglePasswordVisibility('password', false)">
@@ -82,7 +80,8 @@
       </div>
     </div>
   </footer>
-  <script src="../login/login.js"></script>
+  <script src="../login/login.js" defer></script>
+  <script src="../signup/signup.js"defer></script>
   <script src="../global/script.js" defer></script>
 </body>
 </html>

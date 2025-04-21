@@ -4,29 +4,29 @@ document.addEventListener('DOMContentLoaded', function() {
     setupFormSubmission();
 });
 
-function createTechSparkles() {
-    const sparklesContainer = document.querySelector('.tech-sparkles');
-    const numOfSparkles = 30;
+// function createTechSparkles() {
+//     const sparklesContainer = document.querySelector('.tech-sparkles');
+//     const numOfSparkles = 30;
     
-    for (let i = 0; i < numOfSparkles; i++) {
-        const sparkle = document.createElement('div');
-        sparkle.classList.add('sparkle');
+//     for (let i = 0; i < numOfSparkles; i++) {
+//         const sparkle = document.createElement('div');
+//         sparkle.classList.add('sparkle');
         
-        // Random position
-        sparkle.style.left = `${Math.random() * 100}%`;
-        sparkle.style.top = `${Math.random() * 100}%`;
+//         // Random position
+//         sparkle.style.left = `${Math.random() * 100}%`;
+//         sparkle.style.top = `${Math.random() * 100}%`;
         
-        // Random size
-        const size = Math.random() * 5 + 1;
-        sparkle.style.width = `${size}px`;
-        sparkle.style.height = `${size}px`;
+//         // Random size
+//         const size = Math.random() * 5 + 1;
+//         sparkle.style.width = `${size}px`;
+//         sparkle.style.height = `${size}px`;
         
-        // Random animation delay
-        sparkle.style.animationDelay = `${Math.random() * 3}s`;
+//         // Random animation delay
+//         sparkle.style.animationDelay = `${Math.random() * 3}s`;
         
-        sparklesContainer.appendChild(sparkle);
-    }
-}
+//         sparklesContainer.appendChild(sparkle);
+//     }
+// }
 
 // Password visibility toggle
 function togglePasswordVisibility(inputId, show) {
