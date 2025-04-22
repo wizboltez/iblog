@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 16 Pro Max | iBlog</title>
+    <link rel="stylesheet" href="../global/style.css">
+    <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+               
+        .glow-blue {
+            background-color: #0071e3;
+            color: white !important;
+        }
+        
+        .product-hero {
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-hero img {
+            width: 100%;
+            max-width: 600px;
+            object-fit: cover;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
+        
+        .product-hero:hover img {
+            transform: translateY(0);
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .buy-now {
+            display: inline-block;
+            background-color: #0071e3;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .buy-now:hover {
+            background-color: #0062c4;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+        }
+        
+        .product-section {
+            padding: 80px 20px;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0071e3;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: #0071e3;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .specs-table tr {
+            border-bottom: 1px solid #333;
+        }
+        
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .specs-table td {
+            padding: 15px;
+        }
+        
+        .specs-table td:first-child {
+            font-weight: bold;
+            color: #0071e3;
+            width: 30%;
+        }
+        
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .color-option.active {
+            border: 2px solid white;
+        }
+        
+        .color-black {
+            background-color: #1d1d1f;
+        }
+        
+        .color-silver {
+            background-color: #e3e4e5;
+        }
+        
+        .color-gold {
+            background-color: #fae7cf;
+        }
+        
+        .color-blue {
+            background-color: #273b5f;
+        }
+        
+        .storage-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .storage-option {
+            padding: 12px 25px;
+            background-color: #1a1a1a;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .storage-option:hover {
+            background-color: #333;
+        }
+        
+        .storage-option.active {
+            background-color: #0071e3;
+        }
+        
+        .price-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .current-price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #0071e3;
+        }
+        
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 20px;
+            height: 200px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .reviews-container {
+            margin-top: 40px;
+        }
+        
+        .review-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0071e3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .reviewer-info {
+            flex-grow: 1;
+        }
+        
+        .reviewer-name {
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .reviewer-date {
+            font-size: 14px;
+            opacity: 0.7;
+            margin: 0;
+        }
+        
+        .review-rating {
+            color: gold;
+            font-size: 18px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            padding: 80px 20px;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        
+        
+        @media (max-width: 768px) {
+            .product-hero {
+                flex-direction: column;
+                height: auto;
+                padding: 40px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .color-options,
+            .storage-options {
+                flex-wrap: wrap;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../landing_page/home.html">Home</a>
+        <a href="../products/product.html">Product</a>
+        <a href="../accessories/accessories.html">Accessories</a>
+        <a href="../news/Newssection.html">News</a>
+        <a href="../reviews/review.html">Reviews</a>
+        <a href="../location/location.html">Store Locator</a>
+        <a href="../signup/signup.html" class="glow-blue">Sign up</a>
+    </div>
+    
+    <section class="product-hero">
+        <div class="hero-content">
+            <h1>iPhone 16 Pro Max</h1>
+            <p>The ultimate iPhone with our largest display, longest battery life, and most advanced camera system ever.</p>
+            <a href="#buy" class="buy-now">Buy Now</a>
+        </div>
+    </section>
+    
+    <section class="product-section">
+        <div class="section-container">
+            <h2 class="section-title">Titanium. So strong. So light. So Pro.</h2>
+            <p>iPhone 16 Pro Max features a stunning aerospace-grade titanium design, combining incredible strength with remarkable lightness. The result is our most durable Pro lineup ever, with improved battery life and performance.</p>
+            
+            <div class="product-gallery">
+                <div class="gallery-item">
+                    <img src="https://photos5.appleinsider.com/gallery/61078-126393-Cameras-2-16-Pro-Max-xl.jpg" alt="iPhone 16 Pro Max">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.apple.com/v/iphone-16-pro/f/images/overview/product-viewer/iphone-pro/all_colors__fdpduog7urm2_xlarge.jpg" alt="iPhone 16 Pro Max Colors">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/tile/Apple-iPhone-16-Pro-hero-240909-lp.jpg.og.jpg?202503101959">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="product-section" style="background-color: #0a0a0a;">
+        <div class="section-container">
+            <h2 class="section-title">Key Features</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="feature-title">A19 Pro Chip</h3>
+                    <p>The most powerful chip ever in a smartphone, with next-generation Neural Engine for advanced AI capabilities.</p>
+                </div>
+                
+                <div class="feature-card fade-in" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="feature-title">Pro Camera System</h3>
+                    <p>48MP Main camera with advanced computational photography and a new 5x Telephoto lens for incredible zoom capabilities.</p>
+                </div>
+                
+                <div class="feature-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h3 class="feature-title">All-day Battery</h3>
+                    <p>Our best battery life ever in an iPhone, with up to 29 hours of video playback.</p>
+                </div>
+                
+                <div class="feature-card fade-in" style="animation-delay: 0.3s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Super Retina XDR Display</h3>
+                    <p>6.9-inch display with ProMotion technology and Always-On capabilities.</p>
+                </div>
+                
+                <div class="feature-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Ceramic Shield</h3>
+                    <p>Tougher than any smartphone glass, with incredible drop protection.</p>
+                </div>
+                
+                <div class="feature-card fade-in" style="animation-delay: 0.5s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">Apple Intelligence</h3>
+                    <p>Experience the next generation of on-device AI capabilities powered by the A19 Pro chip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="product-section">
+        <div class="section-container">
+            <h2 class="section-title">Technical Specifications</h2>
+            
+            <table class="specs-table">
+                <tr>
+                    <td>Display</td>
+                    <td>6.9-inch Super Retina XDR display with ProMotion and Always-On capabilities, 3120 x 1440 resolution at 460 ppi</td>
+                </tr>
+                <tr>
+                    <td>Processor</td>
+                    <td>A19 Pro chip with next-generation Neural Engine</td>
+                </tr>
+                <tr>
+                    <td>Camera</td>
+                    <td>Pro camera system: 48MP Main, 12MP Ultra Wide, 12MP Telephoto with 5x optical zoom, 48MP front camera</td>
+                </tr>
+                <tr>
+                    <td>Video</td>
+                    <td>4K video recording at 24 fps, 30 fps, or 60 fps, Cinematic mode, Action mode, ProRes video recording</td>
+                </tr>
+                <tr>
+                    <td>Battery</td>
+                    <td>Up to 29 hours video playback, Fast-charge capable (50% charge in around 30 minutes)</td>
+                </tr>
+                <tr>
+                    <td>Storage</td>
+                    <td>256GB, 512GB, 1TB, or 2TB</td>
+                </tr>
+                <tr>
+                    <td>Security</td>
+                    <td>Face ID, Secure Enclave</td>
+                </tr>
+                <tr>
+                    <td>Connectivity</td>
+                    <td>5G (sub‑6 GHz and mmWave), Gigabit LTE, Wi-Fi 7, Bluetooth 5.3, Ultra Wideband chip</td>
+                </tr>
+                <tr>
+                    <td>Durability</td>
+                    <td>Ceramic Shield front, Titanium design, IP68 water and dust resistance</td>
+                </tr>
+                <tr>
+                    <td>OS</td>
+                    <td>iOS 18</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    
+    <section class="product-section" style="background-color: #0a0a0a;" id="buy">
+        <div class="section-container">
+            <h2 class="section-title">Choose Your iPhone 16 Pro Max</h2>
+            
+            <div>
+                <h3 style="text-align: center; margin-top: 40px;">Select Color</h3>
+                <div class="color-options">
+                    <div class="color-option color-black active" data-color="Black Titanium"></div>
+                    <div class="color-option color-silver" data-color="Silver Titanium"></div>
+                    <div class="color-option color-gold" data-color="Natural Titanium"></div>
+                    <div class="color-option color-blue" data-color="Blue Titanium"></div>
+                </div>
+                <p style="text-align: center; margin-top: 15px;"><span id="selected-color">Black Titanium</span></p>
+            </div>
+            
+            <div>
+                <h3 style="text-align: center; margin-top: 40px;">Select Storage</h3>
+                <div class="storage-options">
+                    <div class="storage-option active" data-storage="256GB" data-price="1199">256GB</div>
+                    <div class="storage-option" data-storage="512GB" data-price="1399">512GB</div>
+                    <div class="storage-option" data-storage="1TB" data-price="1599">1TB</div>
+                    <div class="storage-option" data-storage="2TB" data-price="1799">2TB</div>
+                </div>
+            </div>
+            
+            <div class="price-section">
+                <p>Your iPhone 16 Pro Max with <span id="selected-storage">256GB</span> storage</p>
+                <p class="current-price">$<span id="price-display">1199</span></p>
+                <a href="https://www.apple.com/shop/buy-iphone" class="buy-now">Add to Cart</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="product-section">
+        <div class="section-container">
+            <h2 class="section-title">Customer Reviews</h2>
+            
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">JD</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">John Doe</p>
+                            <p class="reviewer-date">April 12, 2025</p>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                    </div>
+                    <p>The camera system on the iPhone 16 Pro Max is simply outstanding. I've been able to capture professional-quality photos that I couldn't with any previous smartphone. The battery life is also impressive - I can go nearly two full days without charging!</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">SM</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Sarah Miller</p>
+                            <p class="reviewer-date">April 8, 2025</p>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                    </div>
+                    <p>The display is incredibly vibrant and the ProMotion technology makes everything so smooth. The Apple Intelligence features are game-changing for productivity. Worth every penny for a power user like me.</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">RL</div>
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Robert Lee</p>
+                            <p class="reviewer-date">April 5, 2025</p>
+                        </div>
+                        <div class="review-rating">★★★★☆</div>
+                    </div>
+                    <p>Great phone overall with amazing performance. The titanium build feels premium in hand. Only giving 4 stars because it's quite expensive, but if you can afford it, you won't be disappointed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <h2 class="cta-title">Ready to experience the ultimate iPhone?</h2>
+        <a href="#buy" class="buy-now">Buy iPhone 16 Pro Max Now</a>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-right">
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" class="social-icon s1"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ededed;"></i></a>
+                    <a href="https://x.com/home?lang=en" class="social-icon s2"><i class="fa-brands fa-x-twitter fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.instagram.com/" class="social-icon s3"><i class="fa-brands fa-instagram fa-flip-horizontal fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.linkedin.com/" class="social-icon s4"><i class="fa-brands fa-linkedin fa-xl" style="color: #f2f2f2;"></i></a>
+                    <div>
+                        <p class="copyright">&copy; 2025 IBLOG. <br>All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="scrollToTop">
+                <i class="fa-solid fa-angle-up fa-xl" style="color: #1e90ff;"></i>
+            </div>
+            
+            <div class="footer-left">
+                <div class="footer-column">
+                    <a href="../about/about.html">About Us</a> 
+                    <a href="../privacy_terms/privacy.html">Privacy Policy</a>
+                    <a href="../privacy_terms/terms.html">Terms & Condition</a>
+                </div>
+                <div class="footer-column">
+                    <a href="../contactUs/contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Color selection functionality
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update selected color text
+                document.getElementById('selected-color').textContent = this.dataset.color;
+            });
+        });
+        
+        // Storage selection functionality
+        document.querySelectorAll('.storage-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.storage-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update selected storage text and price
+                document.getElementById('selected-storage').textContent = this.dataset.storage;
+                document.getElementById('price-display').textContent = this.dataset.price;
+            });
+        });
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card, .gallery-item, .review-card').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+    <script src="../global/script.js" defer></script>
+</body>
+</html>

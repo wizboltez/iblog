@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacBook Air | iBlog</title>
+    <link rel="stylesheet" href="../global/style.css">
+    <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .product-hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-image {
+            position: absolute;
+            width: 60%;
+            max-width: 800px;
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #0071e3;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: #0062c4;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 113, 227, 0.4);
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid #0071e3;
+            color: #0071e3;
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: rgba(0, 113, 227, 0.1);
+        }
+        
+        .specs-section {
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .spec-card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .spec-icon {
+            font-size: 40px;
+            color: #0071e3;
+            margin-bottom: 20px;
+        }
+        
+        .spec-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .comparison-section {
+            padding: 80px 20px;
+            background-color: #0a0a0a;
+        }
+        
+        .model-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .model-card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .model-card.highlight {
+            border: 2px solid #0071e3;
+            transform: scale(1.05);
+        }
+        
+        .model-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .model-card.highlight:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+        
+        .model-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0071e3;
+        }
+        
+        .model-price {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .model-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+        
+        .model-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .model-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .features-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #000000, #0a0a0a);
+        }
+        
+        .feature-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 100px auto;
+        }
+        
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .feature-image {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .feature-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .feature-content {
+            flex: 1;
+            padding: 40px;
+        }
+        
+        .feature-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .reviews-section {
+            padding: 80px 20px;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .review-card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .review-stars {
+            color: gold;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .review-quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .review-author {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .accessories-section {
+            padding: 80px 20px;
+            background-color: #0a0a0a;
+        }
+        
+        .accessories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .accessory-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .accessory-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .accessory-img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        
+        .accessory-name {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .accessory-price {
+            font-weight: bold;
+            color: #0071e3;
+            margin-bottom: 15px;
+        }
+        
+        .buy-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+        }
+        
+        .buy-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .stores-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+        
+        .store-card {
+            width: 200px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .store-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .store-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 15px auto;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .store-card:hover .store-logo {
+            filter: grayscale(0%);
+        }
+        
+        .store-name {
+            font-weight: bold;
+        }
+        
+        .faq-section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #0071e3;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding-top: 10px;
+            display: none;
+        }
+        
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+            
+            .feature-row {
+                flex-direction: column-reverse !important;
+            }
+            
+            .feature-image, .feature-content {
+                padding: 20px;
+            }
+                        
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../landing_page/home.html">Home</a>
+        <a href="../products/product.html">Product</a>
+        <a href="../accessories/accessories.html">Accessories</a>
+        <a href="../news/Newssection.html">News</a>
+        <a href="../reviews/review.html">Reviews</a>
+        <a href="../location/location.html">Store Locator</a>
+        <a href="../signup/signup.html" class="glow-blue">Sign up</a>
+    </div>
+    
+    <section class="product-hero">
+        <div class="hero-content">
+            <h1>MacBook Air</h1>
+            <p>Our thinnest, lightest notebook with incredible all-day battery life, now with the powerful M3 chip and stunning Liquid Retina display.</p>
+            <a href="#buy-now" class="cta-button">Buy Now</a>
+            <a href="#specs" class="cta-button secondary">Learn More</a>
+        </div>
+        <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._SX679_.jpg" alt="MacBook Air" class="hero-image">
+    </section>
+    
+    <section id="specs" class="specs-section">
+        <h2 class="section-title">Extraordinary Capabilities</h2>
+        <div class="specs-grid">
+            <div class="spec-card">
+                <div class="spec-icon">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <h3 class="spec-title">M3 Chip</h3>
+                <p>The Apple M3 chip delivers blazing fast performance with exceptional power efficiency. Up to 18x faster than previous generation MacBook Air models.</p>
+            </div>
+            
+            <div class="spec-card">
+                <div class="spec-icon">
+                    <i class="fa-solid fa-battery-full"></i>
+                </div>
+                <h3 class="spec-title">All-Day Battery</h3>
+                <p>Up to 18 hours of battery life lets you work, play, and create all day without needing to plug in. Perfect for on-the-go productivity.</p>
+            </div>
+            
+            <div class="spec-card">
+                <div class="spec-icon">
+                    <i class="fa-solid fa-display"></i>
+                </div>
+                <h3 class="spec-title">Liquid Retina Display</h3>
+                <p>The stunning 13.6-inch Liquid Retina display supports P3 wide color and 500 nits of brightness for vibrant, true-to-life visuals.</p>
+            </div>
+            
+            <div class="spec-card">
+                <div class="spec-icon">
+                    <i class="fa-solid fa-wind"></i>
+                </div>
+                <h3 class="spec-title">Fanless Design</h3>
+                <p>The advanced thermal design keeps your MacBook Air cool without fans, ensuring completely silent operation even under heavy workloads.</p>
+            </div>
+            
+            <div class="spec-card">
+                <div class="spec-icon">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <h3 class="spec-title">1080p FaceTime HD Camera</h3>
+                <p>Look sharp and sound clear with the high-resolution camera and three-mic array with directional beamforming.</p>
+            </div>
+            
+            <div class="spec-card">
+                <div class="spec-icon">
+                    <i class="fa-solid fa-weight-scale"></i>
+                </div>
+                <h3 class="spec-title">Ultralight Design</h3>
+                <p>At just 2.7 pounds and 11.3mm thin, MacBook Air is designed for ultimate portability without sacrificing performance.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="comparison-section">
+        <h2 class="section-title">Choose Your MacBook Air</h2>
+        <div class="model-comparison">
+            <div class="model-card">
+                <h3 class="model-title">MacBook Air 13"</h3>
+                <p class="model-price">From $999</p>
+                <ul class="model-features">
+                    <li>M3 chip with 8-core CPU</li>
+                    <li>8-core GPU</li>
+                    <li>8GB unified memory</li>
+                    <li>256GB SSD storage</li>
+                    <li>13.6-inch Liquid Retina display</li>
+                    <li>Two Thunderbolt / USB 4 ports</li>
+                    <li>MagSafe charging port</li>
+                    <li>1080p FaceTime HD camera</li>
+                    <li>30W USB-C Power Adapter</li>
+                </ul>
+                <a href="#buy-now" class="cta-button">Select</a>
+            </div>
+            
+            <div class="model-card highlight">
+                <h3 class="model-title">MacBook Air 13" (Upgraded)</h3>
+                <p class="model-price">From $1199</p>
+                <ul class="model-features">
+                    <li>M3 chip with 8-core CPU</li>
+                    <li>10-core GPU</li>
+                    <li>16GB unified memory</li>
+                    <li>512GB SSD storage</li>
+                    <li>13.6-inch Liquid Retina display</li>
+                    <li>Two Thunderbolt / USB 4 ports</li>
+                    <li>MagSafe charging port</li>
+                    <li>1080p FaceTime HD camera</li>
+                    <li>35W Dual USB-C Power Adapter</li>
+                </ul>
+                <a href="#buy-now" class="cta-button">Select</a>
+            </div>
+            
+            <div class="model-card">
+                <h3 class="model-title">MacBook Air 15"</h3>
+                <p class="model-price">From $1299</p>
+                <ul class="model-features">
+                    <li>M3 chip with 8-core CPU</li>
+                    <li>10-core GPU</li>
+                    <li>8GB unified memory</li>
+                    <li>512GB SSD storage</li>
+                    <li>15.3-inch Liquid Retina display</li>
+                    <li>Two Thunderbolt / USB 4 ports</li>
+                    <li>MagSafe charging port</li>
+                    <li>1080p FaceTime HD camera</li>
+                    <li>35W Dual USB-C Power Adapter</li>
+                </ul>
+                <a href="#buy-now" class="cta-button">Select</a>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <section class="reviews-section">
+        <h2 class="section-title">What People Are Saying</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"The M3 MacBook Air is the perfect laptop for me. Incredible battery life, silent operation, and more than enough power for my work and creative projects."</p>
+                <div class="review-author">
+                    <img src="/api/placeholder/50/50" alt="User Avatar" class="review-avatar">
+                    <div>
+                        <p>Sarah J.</p>
+                        <small>Verified Buyer</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"As a college student, I needed something portable yet powerful. This MacBook Air exceeded all my expectations. My favorite feature is how the battery lasts through my entire day of classes."</p>
+                <div class="review-author">
+                    <img src="/api/placeholder/50/50" alt="User Avatar" class="review-avatar">
+                    <div>
+                        <p>Michael T.</p>
+                        <small>Verified Buyer</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"I've been a Windows user all my life but decided to try the MacBook Air. I'm completely blown away by how smooth and intuitive macOS is, and the build quality is on another level."</p>
+                <div class="review-author">
+                    <img src="/api/placeholder/50/50" alt="User Avatar" class="review-avatar">
+                    <div>
+                        <p>Rachel K.</p>
+                        <small>Verified Buyer</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <section id="buy-now" class="buy-section">
+        <h2 class="buy-title">Ready to Experience MacBook Air?</h2>
+        <p>Available from these retailers and more</p>
+        <div class="stores-grid">
+            <a href="https://www.apple.com" class="store-card">
+                <img src="/api/placeholder/100/100" alt="Apple Store" class="store-logo">
+                <p class="store-name">Apple Store</p>
+            </a>
+            
+            <a href="https://www.amazon.com" class="store-card">
+                <img src="/api/placeholder/100/100" alt="Amazon" class="store-logo">
+                <p class="store-name">Amazon</p>
+            </a>
+            
+            <a href="https://www.bestbuy.com" class="store-card">
+                <img src="/api/placeholder/100/100" alt="Best Buy" class="store-logo">
+                <p class="store-name">Best Buy</p>
+            </a>
+            
+            <a href="https://www.target.com" class="store-card">
+                <img src="/api/placeholder/100/100" alt="Target" class="store-logo">
+                <p class="store-name">Target</p>
+            </a>
+        </div>
+        <p>Or visit an Apple Store near you for a hands-on experience</p>
+        <a href="../location/location.html" class="cta-button">Find a Store</a>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-right">
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" class="social-icon s1"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ededed;"></i></a>
+                    <a href="https://x.com/home?lang=en" class="social-icon s2"><i class="fa-brands fa-x-twitter fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.instagram.com/" class="social-icon s3"><i class="fa-brands fa-instagram fa-flip-horizontal fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.linkedin.com/" class="social-icon s4"><i class="fa-brands fa-linkedin fa-xl" style="color: #f2f2f2;"></i></a>
+                    <div>
+                        <p class="copyright">&copy; 2025 IBLOG. <br>All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="scrollToTop">
+                    <i class="fa-solid fa-angle-up fa-xl" style="color: #1e90ff;"></i>
+            </div>
+            <div class="footer-left">
+                <div class="footer-column">
+                    <a href="../about/about.html">About Us</a> 
+                    <a href="../privacy_terms/privacy.html">Privacy Policy</a>
+                    <a href="../privacy_terms/terms.html">Terms & Condition</a>
+                </div>
+                <div class="footer-column">
+                    <a href="../contactUs/contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../global/script.js" defer></script>
+</body>
+</html>
+    
+    

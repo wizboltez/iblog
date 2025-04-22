@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPad Mini | iBlog</title>
+    <link rel="stylesheet" href="../global/style.css">
+    <script src="https://kit.fontawesome.com/ad983a80fd.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .product-header {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            padding: 20px;
+        }
+        
+        .product-header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #0071e3, #42b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .product-header p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .product-image {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s ease;
+        }
+        
+        .product-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #0071e3;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #0071e3;
+        }
+        
+        .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        
+        .specs-table th {
+            background-color: #1a1a1a;
+            color: #0071e3;
+        }
+        
+        .specs-table tr:hover {
+            background-color: rgba(0, 113, 227, 0.1);
+        }
+        
+        .buy-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .buy-card {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .buy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .buy-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #0071e3;
+        }
+        
+        .buy-card p.price {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .buy-card p.description {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .buy-button {
+            display: inline-block;
+            background-color: #0071e3;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .buy-button:hover {
+            background-color: #0062c4;
+            transform: scale(1.05);
+        }
+        
+        .accessories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .accessory-item {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .accessory-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .accessory-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .accessory-item h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .accessory-item p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+        }
+        
+        .color-option:hover {
+            transform: scale(1.2);
+        }
+        
+        .color-option.active {
+            box-shadow: 0 0 0 2px white;
+        }
+        
+        .space-gray {
+            background-color: #535353;
+        }
+        
+        .silver {
+            background-color: #e3e3e3;
+        }
+        
+        .gold {
+            background-color: #fad7bd;
+        }
+        
+        .purple {
+            background-color: #e0c6f5;
+        }
+        
+        
+        @media (max-width: 768px) {
+            .product-header h1 {
+                font-size: 36px;
+            }
+            
+            .product-header p {
+                font-size: 18px;
+            }
+            
+            .features, .buy-options, .accessories {
+                grid-template-columns: 1fr;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../landing_page/home.html">Home</a>
+        <a href="../products/product.html">Product</a>
+        <a href="../accessories/accessories.html">Accessories</a>
+        <a href="../news/Newssection.html">News</a>
+        <a href="../reviews/review.html">Reviews</a>
+        <a href="../location/location.html">Store Locator</a>
+        <a href="../signup/signup.html" class="glow-blue">Sign up</a>
+    </div>    
+    <div class="product-header">
+        <h1>iPad mini</h1>
+        <p>Compact power that fits in your hand. Featuring the A17 Pro chip, 8.3-inch Liquid Retina display, and Apple Pencil 2 support.</p>
+        <div class="color-options">
+            <div class="color-option space-gray active" title="Space Gray"></div>
+            <div class="color-option silver" title="Silver"></div>
+            <div class="color-option gold" title="Gold"></div>
+            <div class="color-option purple" title="Purple"></div>
+        </div>
+        
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <h2 class="section-title">Overview</h2>
+            <p>The new iPad mini. Mega power. Mini sized. With the blazing-fast A17 Pro chip, an all-screen design, and Apple Pencil 2 capability, the iPad mini is a portable powerhouse that puts incredible iPad productivity and creativity in the palm of your hand. And with support for Apple Intelligence, you can transform everyday tasks into extraordinary experiences.</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fas fa-microchip feature-icon"></i>
+                    <h3>A17 Pro Chip</h3>
+                    <p>Blazing fast performance in a compact design with powerful CPU and GPU for pro level workflows.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-pen-fancy feature-icon"></i>
+                    <h3>Apple Pencil Support</h3>
+                    <p>Compatible with Apple Pencil 2 for note-taking, drawing, and marking up documents with precision.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-expand feature-icon"></i>
+                    <h3>8.3" Liquid Retina Display</h3>
+                    <p>Gorgeous edge-to-edge screen with True Tone and P3 wide color for an immersive viewing experience.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-camera feature-icon"></i>
+                    <h3>12MP Cameras</h3>
+                    <p>Ultra Wide front camera with Center Stage and Wide back camera for capturing stunning photos and videos.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-fingerprint feature-icon"></i>
+                    <h3>Touch ID</h3>
+                    <p>Secure authentication and Apple Pay with the integrated Touch ID sensor in the top button.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-wifi feature-icon"></i>
+                    <h3>Ultrafast Wi-Fi 6E</h3>
+                    <p>Connect to high-speed networks with Wi-Fi 6E, and stay connected with 5G on cellular models.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Technical Specifications</h2>
+            <table class="specs-table">
+                <tr>
+                    <th>Dimension</th>
+                    <td>195.4 x 134.8 x 6.3 mm (7.69 x 5.31 x 0.25 in)</td>
+                </tr>
+                <tr>
+                    <th>Weight</th>
+                    <td>293 g (Wi-Fi) / 297 g (Wi-Fi + Cellular)</td>
+                </tr>
+                <tr>
+                    <th>Display</th>
+                    <td>8.3-inch Liquid Retina display with 2266 x 1488 resolution, 326 ppi</td>
+                </tr>
+                <tr>
+                    <th>Chip</th>
+                    <td>A17 Pro chip with 6-core CPU and 5-core GPU</td>
+                </tr>
+                <tr>
+                    <th>Storage</th>
+                    <td>128GB, 256GB, 512GB, or 1TB</td>
+                </tr>
+                <tr>
+                    <th>Camera</th>
+                    <td>12MP Wide back camera, 12MP Ultra Wide front camera with Center Stage</td>
+                </tr>
+                <tr>
+                    <th>Battery</th>
+                    <td>Up to 10 hours of web surfing on Wi-Fi or watching video</td>
+                </tr>
+                <tr>
+                    <th>Connectivity</th>
+                    <td>Wi-Fi 6E, Bluetooth 5.3, USB-C, 5G (cellular models)</td>
+                </tr>
+                <tr>
+                    <th>Authentication</th>
+                    <td>Touch ID integrated into top button</td>
+                </tr>
+                <tr>
+                    <th>Audio</th>
+                    <td>Stereo speakers in landscape mode</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Buy iPad mini</h2>
+            <div class="buy-options">
+                <div class="buy-card">
+                    <h3>iPad mini (128GB)</h3>
+                    <p class="price">$499</p>
+                    <p class="description">Wi-Fi model, 128GB storage. Available in Space Gray, Pink, Purple, and Starlight.</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <div class="buy-card">
+                    <h3>iPad mini (256GB)</h3>
+                    <p class="price">$599</p>
+                    <p class="description">Wi-Fi model, 256GB storage. Available in Space Gray, Pink, Purple, and Starlight.</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <div class="buy-card">
+                    <h3>iPad mini (512GB)</h3>
+                    <p class="price">$799</p>
+                    <p class="description">Wi-Fi model, 512GB storage. Available in Space Gray, Pink, Purple, and Starlight.</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <div class="buy-card">
+                    <h3>iPad mini Cellular</h3>
+                    <p class="price">Starting at $649</p>
+                    <p class="description">Wi-Fi + Cellular models. Stay connected anywhere with 5G capability.</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        
+        
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-right">
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" class="social-icon s1"><i class="fa-brands fa-square-facebook fa-xl" style="color: #ededed;"></i></a>
+                    <a href="https://x.com/home?lang=en" class="social-icon s2"><i class="fa-brands fa-x-twitter fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.instagram.com/" class="social-icon s3"><i class="fa-brands fa-instagram fa-flip-horizontal fa-xl" style="color: #f2f2f2;"></i></a>
+                    <a href="https://www.linkedin.com/" class="social-icon s4"><i class="fa-brands fa-linkedin fa-xl" style="color: #f2f2f2;"></i></a>
+                    <div>
+                        <p class="copyright">&copy; 2025 IBLOG. <br>All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="scrollToTop">
+                <i class="fa-solid fa-angle-up fa-xl" style="color: #1e90ff;"></i>
+            </div>
+
+            <div class="footer-left">
+                <div class="footer-column">
+                    <a href="../about/about.html">About Us</a> 
+                    <a href="../privacy_terms/privacy.html">Privacy Policy</a>
+                    <a href="../privacy_terms/terms.html">Terms & Condition</a>
+                </div>
+                <div class="footer-column">
+                    <a href="../contactUs/contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Color selection functionality
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                document.querySelectorAll('.color-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Here you would update the product image based on color selection
+                // For demonstration, we're just showing a placeholder
+                const colorName = this.getAttribute('title');
+                console.log(`Selected color: ${colorName}`);
+            });
+        });
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
